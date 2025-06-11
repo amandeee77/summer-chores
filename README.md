@@ -1,29 +1,48 @@
-# Summer Chores - Callback Functions
+# Summer Chores - Callback & Promise Versions  
 
-## Overview of Summer Chores
-This assignment demonstrates the use of callback functions in JavaScript by simulating a routine of summer chores. The person completing the chores must follow a strict order but may fall asleep due to exhaustion before finishing all tasks. This introduces conditional flow control using asynchronous operations learned in our material.
+## Overview of Summer Chores  
+This assignment demonstrates two approaches to managing **asynchronous operations** in JavaScript: **callback functions** and **Promises**. By simulating a sequence of summer chores, we explore how different methods affect readability, error handling, and flow control.  
 
-## Features of the Assignment
-- Callback functions - manage chore execution in sequence.
-- Simulates real-world asynchronous tasks using `setTimeout()`.
-- Implements falling asleep to simulate fatigue.
-- Demonstrates the use of nested callbacks.
+The person completing the chores follows a strict order but may fall asleep due to exhaustion before finishing all tasks, introducing **conditional flow control** through asynchronous execution.    
 
-## Chore List & Order
-1. Mowing the yard
-2. Weed eating
-3. Trimming hedges
-4. Collecting wood
-5. Watering the garden
+### Callback Version (`callbackVersion.js`)  
+- Uses **nested callbacks** to manage chore execution in sequence.  
+- Simulates real-world asynchronous tasks using `setTimeout()`.  
+- Implements a failure scenario where the person may **fall asleep** before finishing all chores.  
 
-Each task is executed sequentially, ensuring all chores are completed in order unless fatigue causes the person to fall asleep.
+### Promise Version (`promiseVersion.js`)  
+- **Replaces callbacks** with JavaScript **Promises** for better readability.  
+- Uses `.then()` chaining to **avoid callback hell** and improve error handling.  
+- A **`.catch()` block** gracefully handles interruptions in the chore sequence.  
+- Allows easier scalability—new chores can be added without deep nesting.  
 
-## Getting Started
+## Chore List & Execution Order  
+1. Mowing the yard  
+2. Weed eating  
+3. Trimming hedges  
+4. Collecting wood  
+5. Watering the garden  
 
-### Prerequisites
-- Install [Node.js](https://nodejs.org/) to run the project.
+Each task is completed **sequentially**, and a failure (falling asleep) interrupts the flow.  
 
-### Installation
-1. Clone the repository:
+## Getting Started  
+
+### Prerequisites  
+- Install [Node.js](https://nodejs.org/) to run the project.  
+
+### Installation  
+1. Clone the repository:  
+   ```sh  
+   git clone https://github.com/your-username/summer-chores.git  
+
+2. Navigate to the project folder:
    ```sh
-   git clone https://github.com/your-username/summer-chores.git
+   cd summer-chores
+
+3. Run the callback version:
+   ```sh
+   node callbackVersion.js
+
+4. Run the Promise-based version:
+   ```sh
+   node promiseVersion.js
