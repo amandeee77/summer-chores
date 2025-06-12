@@ -62,4 +62,21 @@ function waterGarden(name) {
         }, 500);
     });
 }
+
+// 💡 Make sure this appears BEFORE you call it
+function doSummerChores(name) {
+    mowYard(name)
+        .then(() => weedEat(name))
+        .then(() => trimHedges(name))
+        .then(() => collectWood(name))
+        .then(() => waterGarden(name))
+        .then(() => {
+            console.log(`${name} finished all their chores!`);
+        })
+        .catch(() => {
+            console.log(`${name}'s chore routine was interrupted.`);
+        });
+}
+
+// ✅ This should be last
 doSummerChores("Amanda");
